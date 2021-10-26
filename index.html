@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1,
+  maximum-scale=5"
+    />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
+      integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <title>Weather App | Danny Parker</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="scripts/app.js" defer></script>
+  </head>
+  <body>
+    <div class="weather-nav-mobile">
+      <button class="btn close-btn">X</button>
+      <form id="search-location">
+        <div class="form-control">
+          <i class="fas fa-search search-icon"></i>
+          <input
+            type="text"
+            name=""
+            id=""
+            class="search-location"
+            placeholder="search location"
+          />
+        </div>
+        <button class="btn btn-primary">Search</button>
+      </form>
+      <ul class="searched-locations">
+        <!-- <li class="searched-item">
+          <span>London</span>
+          <i class="fas fa-chevron-right right-icon"></i>
+        </li>
+        <li class="searched-item">
+          <span>Barcelona</span>
+          <i class="fas fa-chevron-right right-icon"></i>
+        </li>
+        <li class="searched-item">
+          <span>Long Beach</span>
+          <i class="fas fa-chevron-right right-icon"></i>
+        </li> -->
+      </ul>
+    </div>
+    <header>
+      <nav class="search-bar">
+        <button class="btn btn-secondary" id="search-places">
+          Search for places
+        </button>
+        <span class="material-icons geo-location">my_location</span>
+      </nav>
+      <div class="header-content">
+        <img src="./assets/LightRain.png" id="weatherTodayImg" />
+        <h1>
+          <span id="todayTemp">15</span>
+          <span>°C</span>
+        </h1>
+        <h3 id="todayConditions">Shower</h3>
+        <ul class="date">
+          <li>Today</li>
+          <li id="todayDate">Fri, 5 Jun</li>
+        </ul>
+        <p id="cityName">Helsinki</p>
+      </div>
+    </header>
+    <main>
+      <div class="container">
+        <section class="weekly-forecast">
+          <ul>
+            <li>
+              <h4>Tomorrow</h4>
+              <img src="./assets/LightRain.png" alt="" />
+              <div class="temps">
+                <span>15C</span>
+                <span>11C</span>
+              </div>
+            </li>
+            <li>
+              <h4>Sun, 7th June 2021</h4>
+              <img src="./assets/Clear.png" alt="" />
+              <div class="temps">
+                <span>15C</span>
+                <span>11C</span>
+              </div>
+            </li>
+            <li>
+              <h4>Mon, 8th June 2021</h4>
+              <img src="./assets/Hail.png" alt="" />
+              <div class="temps">
+                <span>15C</span>
+                <span>11C</span>
+              </div>
+            </li>
+            <li>
+              <h4>Tuesday, 9th June 2021</h4>
+              <img src="./assets/HeavyCloud.png" alt="" />
+              <div class="temps">
+                <span>15C</span>
+                <span>11C</span>
+              </div>
+            </li>
+            <li>
+              <h4>Wednesday, 9th June 2021</h4>
+              <img src="./assets/LightRain.png" alt="" />
+              <div class="temps">
+                <span>15C</span>
+                <span>11C</span>
+              </div>
+            </li>
+          </ul>
+        </section>
+        <section class="todays-highlights">
+          <h3>Today's Highlights</h3>
+          <ul>
+            <li>
+              <h4>Wind status</h4>
+              <div><span class="wind-speed">7</span>mph</div>
+              <div class="speed">
+                <i class="fas fa-location-arrow wind-speed-icon"></i>
+                <span>WSW</span>
+              </div>
+            </li>
+            <li>
+              <h4>Humidity</h4>
+              <div><span class="humidity">84</span>%</div>
+              <div class="progress-bar-container">
+                <div class="progress-bar-header">
+                  <span>0</span>
+                  <span>50</span>
+                  <span>100</span>
+                </div>
+                <div id="progressbar">
+                  <div></div>
+                </div>
+              </div>
+            </li>
+            <li>
+              <h4>Visibility</h4>
+              <div><span class="visibility">6,4</span>miles</div>
+            </li>
+            <li>
+              <h4>Air Pressure</h4>
+              <div><span class="air-pressure">998</span>mb</div>
+            </li>
+          </ul>
+        </section>
+      </div>
+    </main>
+  </body>
+</html>

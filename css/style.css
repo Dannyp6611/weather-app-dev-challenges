@@ -1,0 +1,409 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@500;600;700&display=swap");
+
+:root {
+  --font-color: #e7e7eb;
+  --search-bg: #6e707a;
+  --header-bg: #1e213a;
+  --main-bg: #100e1d;
+  --placeholder-color: #616475;
+  --progress-color: #ffec65;
+}
+
+/** base styles **/
+
+*,
+*::before,
+::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  box-sizing: inherit;
+  font-size: 62.5%;
+}
+
+body {
+  background-color: var(--main-bg);
+  color: var(--font-color);
+  font-family: "Raleway", sans-serif;
+  font-size: 1.4rem;
+  display: flex;
+  flex-direction: column;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-weight: 700;
+  height: 1.4;
+}
+
+ul {
+  list-style: none;
+}
+
+.btn {
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  background: transparent;
+  padding: 1.2rem 2rem;
+  border: 0;
+  color: inherit;
+  font-family: "Raleway", sans-serif;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.btn:focus {
+  outline: none;
+}
+
+.btn-primary {
+  background: #3c47e9;
+}
+.btn-secondary {
+  background: var(--search-bg);
+}
+
+/** header **/
+header {
+  background: var(--header-bg) url(../assets/Cloud-background.png) no-repeat
+    center top;
+  padding: 3.5rem;
+  position: relative;
+}
+
+header::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: black;
+  opacity: 0.7;
+}
+
+header .search-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  z-index: 50;
+}
+
+header .search-bar .geo-location {
+  background-color: grey;
+  border-radius: 50%;
+  padding: 0.5rem;
+  cursor: pointer;
+}
+
+.header-content {
+  color: #a09fb1;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 50;
+}
+
+.header-content > * {
+  margin-bottom: 1rem;
+}
+
+header .header-content h1 img {
+  display: inline-block;
+  margin-bottom: 2rem;
+}
+
+header .header-content h1 {
+  font-size: 4.8rem;
+  color: var(--font-color);
+}
+
+header .header-content h3 {
+  font-size: 3.6rem;
+}
+
+header .header-content .date {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+/** weather nav mobile **/
+.weather-nav-mobile {
+  transition: transform 0.3s ease-in-out;
+  position: fixed;
+  z-index: 99;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--header-bg);
+  transform: translateX(-100%);
+  padding: 2rem 0;
+}
+
+.weather-nav-mobile.active {
+  transform: translate(0);
+}
+
+.weather-nav-mobile form {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  padding: 2.5rem;
+}
+
+.weather-nav-mobile .form-control {
+  border: 1px solid white;
+  display: flex;
+  align-items: center;
+  flex: 3;
+  padding: 1.5rem;
+}
+
+.search-icon {
+  margin-right: 10px;
+}
+
+.weather-nav-mobile input {
+  background: transparent;
+  border: none;
+  font: inherit;
+  color: var(--font-color);
+}
+
+.weather-nav-mobile input:focus {
+  outline: none;
+}
+
+.weather-nav-mobile input::placeholder {
+  font-family: "Raleway", sans-serif;
+  font-weight: 500;
+  color: var(--placeholder-color);
+  font-size: 1.6rem;
+}
+
+.weather-nav-mobile button {
+  flex: 1;
+}
+
+.weather-nav-mobile .searched-locations {
+  padding: 2.5rem;
+}
+
+.weather-nav-mobile .searched-locations li {
+  border: 1px solid transparent;
+  padding: 1.5rem 0.8rem;
+  margin-bottom: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+.right-icon {
+  color: var(--placeholder-color);
+  display: none;
+}
+
+.weather-nav-mobile .searched-locations li.active {
+  border: 1px solid var(--placeholder-color);
+}
+
+.weather-nav-mobile .searched-locations li.active .right-icon {
+  display: inline-block;
+}
+
+.close-btn {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+/*** weekly forecast section **/
+.container {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.weekly-forecast,
+.todays-highlights {
+  padding: 3rem;
+}
+.weekly-forecast ul {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.weekly-forecast li {
+  background: var(--header-bg);
+  text-align: center;
+  padding: 3rem;
+  width: 150px;
+}
+.weekly-forecast .temps {
+  display: flex;
+  justify-content: space-between;
+}
+.weekly-forecast .temps div {
+  font-size: 1.6rem;
+}
+.weekly-forecast .temps div:nth-child(1) {
+  color: var(--font-color);
+}
+.weekly-forecast .temps div:nth-child(2) {
+  color: #a09fb1;
+}
+.weekly-forecast li img {
+  width: 60px;
+  height: 65px;
+  display: inline-block;
+  margin: 1rem 0;
+}
+
+/** todays highlights section **/
+.todays-highlights h3 {
+  font-size: 2.4rem;
+  margin-bottom: 4rem;
+}
+.todays-highlights ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 30px;
+}
+.todays-highlights ul li {
+  background: var(--header-bg);
+  text-align: center;
+  padding: 1rem 2.5rem 3rem 2.5rem;
+}
+
+.todays-highlights ul li:nth-child(1),
+.todays-highlights ul li:nth-child(2) {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 220px;
+}
+
+.todays-highlights ul li h4 {
+  font-weight: 500;
+}
+.todays-highlights ul li div {
+  font-size: 2.8rem;
+  font-weight: 700;
+}
+
+/** progress bar **/
+.progress-bar-container {
+  position: relative;
+}
+.progress-bar-container::after {
+  content: "%";
+  font-size: 1.4rem;
+  display: block;
+  padding: 0.5rem;
+  position: absolute;
+  right: 0;
+}
+.progress-bar-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.progress-bar-header span {
+  font-size: 1.6rem;
+  color: #a09fb1;
+  font-weight: bold;
+}
+
+#progressbar {
+  background-color: var(--font-color);
+  border-radius: 13px;
+  margin-top: 0.5rem;
+  /* (height of inner div) / 2 + padding */
+}
+
+#progressbar > div {
+  background-color: var(--progress-color);
+  width: 84%;
+  /* Adjust with JavaScript */
+  height: 8px;
+  border-radius: 10px;
+  padding: 5px;
+}
+
+.speed {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+.wind-speed-icon {
+  background-color: grey;
+  font-size: 2rem;
+  padding: 1rem;
+  border-radius: 50%;
+  display: inline-block;
+  transform: rotate(-190deg);
+}
+.speed span {
+  font-size: 1.4rem;
+  font-weight: 500;
+}
+/** media queries **/
+@media only screen and (min-width: 1224px) {
+  body {
+    flex-direction: row;
+  }
+  header {
+    min-height: 100vh;
+    min-width: 459px;
+  }
+  .header-content {
+    justify-content: flex-start;
+    gap: 15px;
+    align-items: center;
+  }
+  .header-content img {
+    margin-bottom: 8rem;
+  }
+  .container {
+    max-width: 65%;
+  }
+  main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    width: 100%;
+  }
+  .weather-nav-mobile {
+    max-width: 459px;
+  }
+  .todays-highlights ul {
+    flex-direction: row;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+  }
+  .todays-highlights ul li {
+    flex: 1 0 40%;
+  }
+  .todays-highlights ul li div {
+    font-size: 6.4rem;
+    font-weight: 700;
+  }
+  .weekly-forecast ul {
+    justify-content: flex-start;
+  }
+}
