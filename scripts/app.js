@@ -87,7 +87,7 @@ const getCityData = async (woeid, cityInfo) => {
   let cityData = [];
   try {
     const res = await fetch(
-      `https://cors-anywhere.herokuapp.com/https://www.metaweather.com/api/location/${woeid}/`
+      `https://www.metaweather.com/api/location/${woeid}/`
     );
     const data = await res.json();
     cityData = {
@@ -104,7 +104,7 @@ const getCityData = async (woeid, cityInfo) => {
 const getCityWeather = async (city) => {
   try {
     const res = await fetch(
-      `https://cors-anywhere.herokuapp.com/https://www.metaweather.com/api/location/search/?query=${city}`
+      `https://www.metaweather.com/api/location/search/?query=${city}`
     );
     const data = await res.json();
     await getCityData(data[0].woeid, data[0]);
@@ -116,7 +116,7 @@ const getCityWeather = async (city) => {
 const getCityByLat = async (position) => {
   try {
     const res = await fetch(
-      `https://cors-anywhere.herokuapp.com/https://www.metaweather.com/api/location/search/?lattlong=${position.coords.latitude},${position.coords.longitude}`
+      `https://www.metaweather.com/api/location/search/?lattlong=${position.coords.latitude},${position.coords.longitude}`
     );
     const data = await res.json();
     await getCityData(data[0].woeid, data[0]);

@@ -4,4 +4,4 @@ Built with Vanilla JS, HTML & CSS
 
 ## LIVE SOLUTION URL
 
-https://inspiring-kare-f4c459.netlify.app/
+https://dreamy-dijkstra-5a79d4.netlify.app/
